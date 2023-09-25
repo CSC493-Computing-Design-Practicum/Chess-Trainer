@@ -27,7 +27,7 @@ Nothing will be required to downlowad, it will be a web application.
 
 - [afreamework1](http://www.aframework1.io/): A framework that is likly to be used goes here.
 - [afreamework2](http://www.aframework2.io/): A second framework that is likly to be used goes here.
-- IDE, if applicable
+- PyCharm 
 
 ## Design
 [Design.md](design.md)
