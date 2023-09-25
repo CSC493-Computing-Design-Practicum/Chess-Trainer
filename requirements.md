@@ -9,7 +9,7 @@ Software must use stockfish to analyse the previously played games.
 
 Software must use analysed games to find positions where the player has played weak moves. 
 
-Software must give the user the opportunity to play a stronger move from a position in the list of positions that they plyed weak moves. 
+Software must give the user the opportunity to play a stronger move from a position in the list of positions that they played weak moves. 
 
 Software must give feedback on the users new move using stockfish for analysis. 
 
