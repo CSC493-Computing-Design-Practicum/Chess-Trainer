@@ -19,6 +19,10 @@ the primary tool to get better at chess.
 ### Prerequisites
 
 Nothing will be required to downlowad, it will be a web application. 
+
+### Requirements
+[Requirements](requirments.md)
+
 ## Built With
 
 - [afreamework1](http://www.aframework1.io/): A framework that is likly to be used goes here.
