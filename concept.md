@@ -1,4 +1,4 @@
-# Project Name
+# ChessTrainer
 Chess Trainer (might be changed later)
 ## Goals
 To collect previously played games, analyse said games to find weak points in the players game,
