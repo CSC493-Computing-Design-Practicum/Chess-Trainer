@@ -1,4 +1,6 @@
 # Chess Trainer
+## Logo
+![image](chess_logo.jpg)
 ## Description/Motivation
 
 Create a web application that will collect previously played games and analyse these games to find weak points in the users 
