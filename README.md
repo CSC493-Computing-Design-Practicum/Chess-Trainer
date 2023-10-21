@@ -37,6 +37,7 @@ Nothing will be required to downlowad, it will be a web application.
 ## Author
 
 - Jako Bister: Chess Trainer [My Github Profile](https://github.com/bisterj)
+- About: Senior Computer Science student at Berea College. Creator and sole contributor to ChessTrainer
 
 ## Acknowledgments
 
