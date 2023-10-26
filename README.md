@@ -1,4 +1,6 @@
 # Chess Trainer
+## Logo
+![image](chess_logo.jpg)
 ## Description/Motivation
 
 Create a web application that will collect previously played games and analyse these games to find weak points in the users 
@@ -32,9 +34,13 @@ Nothing will be required to downlowad, it will be a web application.
 ## Design
 [Design.md](design.md)
 
+## Testing Plan
+[Test Plan](test.plan.md)
+
 ## Author
 
 - Jako Bister: Chess Trainer [My Github Profile](https://github.com/bisterj)
+- About: Senior Computer Science student at Berea College. Creator and sole contributor to ChessTrainer
 
 ## Acknowledgments
 
