@@ -20,7 +20,7 @@ def cleanfile(filename):
 
 
 def import_games(month, year):
-    # This gets the users data from the Chess.com server
+    # This gets the users data from the Chess.com server satisfying issue #3
     txt = urlopen(f"https://api.chess.com/pub/player/jakeBeans/games/{year}/{month}/pgn")
     data = txt.read()
     file = open("Games.pgn", "w")
