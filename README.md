@@ -34,6 +34,9 @@ Nothing will be required to downlowad, it will be a web application.
 ## Design
 [Design.md](design.md)
 
+## Testing Plan
+[Test Plan](test.plan.md)
+
 ## Author
 
 - Jako Bister: Chess Trainer [My Github Profile](https://github.com/bisterj)
