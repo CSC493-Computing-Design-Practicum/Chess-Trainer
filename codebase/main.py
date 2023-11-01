@@ -65,9 +65,15 @@ def analyse(games):
             board.push_san(games[i][r])
             stockfish.set_fen_position(board.fen())
             newval = stockfish.get_evaluation()["value"]
-            score = newval - previousval
+            if r % 2 == 0:
+                score = newval - previousval
+            else:
+                score = -(newval - previousval)
             if score < -100:
-                weak_moves.append((i, r, score))
+                if r % 2 == 0:
+                    weak_moves.append((i, r, score))
+                else:
+                    weak_moves.append((i, r, -score))
 
     return weak_moves
 
