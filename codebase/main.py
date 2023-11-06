@@ -1,5 +1,4 @@
 import re
-import time
 from urllib.request import urlopen
 import chess
 import random
@@ -116,6 +115,7 @@ while(answer == "y"):
                 print("This was an okay move.")
             else:
                 print("But, this was not a good move.")
+            weak_moves.remove(quiz)
         else:
             print("This was not a better move.")
 
