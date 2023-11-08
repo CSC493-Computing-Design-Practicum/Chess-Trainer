@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from PIL import Image, ImageTk
+from ChessPiece import ChessPiece
 
 board = [[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
          [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -38,46 +38,78 @@ for i in range(0, 12):
         sum = i + r
         if board[i][r] != -1 and sum % 2 == 0:
             canvas.create_rectangle((i-2)*60, (r-2)*60, (i-2)*60+60, (r-2)*60+60, fill="#eeeed2")
-#
 
-canvas.create_image(30, 30, image=rb)
-canvas.create_image(90, 30, image=nb)
-canvas.create_image(150, 30, image=bb)
-canvas.create_image(210, 30, image=qb)
-canvas.create_image(270, 30, image=kb)
-canvas.create_image(330, 30, image=bb)
-canvas.create_image(390, 30, image=nb)
-canvas.create_image(450, 30, image=rb)
+rb1 = ChessPiece("black", "rook", (0, 0))
+nb1 = ChessPiece("black", "night", (0, 1))
+bb1 = ChessPiece("black", "bishop", (0, 2))
+qb1 = ChessPiece("black", "queen", (0, 3))
+kb1 = ChessPiece("black", "king", (0, 4))
+bb2 = ChessPiece("black", "bishop", (0, 5))
+nb2 = ChessPiece("black", "night", (0, 6))
+rb2 = ChessPiece("black", "rook", (0, 7))
 
-canvas.create_image(30, 90, image=pb)
-canvas.create_image(90, 90, image=pb)
-canvas.create_image(150, 90, image=pb)
-canvas.create_image(210, 90, image=pb)
-canvas.create_image(270, 90, image=pb)
-canvas.create_image(330, 90, image=pb)
-canvas.create_image(390, 90, image=pb)
-canvas.create_image(450, 90, image=pb)
+pb1 = ChessPiece("black", "pawn", (1, 0))
+pb2 = ChessPiece("black", "pawn", (1, 1))
+pb3 = ChessPiece("black", "pawn", (1, 2))
+pb4 = ChessPiece("black", "pawn", (1, 3))
+pb5 = ChessPiece("black", "pawn", (1, 4))
+pb6 = ChessPiece("black", "pawn", (1, 5))
+pb7 = ChessPiece("black", "pawn", (1, 6))
+pb8 = ChessPiece("black", "pawn", (1, 7))
 
-canvas.create_image(30, 390, image=pw)
-canvas.create_image(90, 390, image=pw)
-canvas.create_image(150, 390, image=pw)
-canvas.create_image(210, 390, image=pw)
-canvas.create_image(270, 390, image=pw)
-canvas.create_image(330, 390, image=pw)
-canvas.create_image(390, 390, image=pw)
-canvas.create_image(450, 390, image=pw)
+pw1 = ChessPiece("white", "pawn", (6, 0))
+pw2 = ChessPiece("white", "pawn", (6, 1))
+pw3 = ChessPiece("white", "pawn", (6, 2))
+pw4 = ChessPiece("white", "pawn", (6, 3))
+pw5 = ChessPiece("white", "pawn", (6, 4))
+pw6 = ChessPiece("white", "pawn", (6, 5))
+pw7 = ChessPiece("white", "pawn", (6, 6))
+pw8 = ChessPiece("white", "pawn", (6, 7))
 
-canvas.create_image(30, 450, image=rw)
-canvas.create_image(90, 450, image=nw)
-canvas.create_image(150, 450, image=bw)
-canvas.create_image(210, 450, image=qw)
-canvas.create_image(270, 450, image=kw)
-canvas.create_image(330, 450, image=bw)
-canvas.create_image(390, 450, image=nw)
-canvas.create_image(450, 450, image=rw)
+rw1 = ChessPiece("white", "rook", (7, 0))
+nw1 = ChessPiece("white", "night", (7, 1))
+bw1 = ChessPiece("white", "bishop", (7, 2))
+qw1 = ChessPiece("white", "queen", (7, 3))
+kw1 = ChessPiece("white", "king", (7, 4))
+bw2 = ChessPiece("white", "bishop", (7, 5))
+nw2 = ChessPiece("white", "night", (7, 6))
+rw2 = ChessPiece("white", "rook", (7, 7))
 
+chesspieces = [rb1, nb1, bb1, qb1, kb1, bb2, nb2, rb2, rw1, nw1, bw1, qw1, kw1, bw2, nw2, rw2, pb1, pb2,
+               pb3, pb4, pb5, pb6, pb7, pb8, pw1, pw2, pw3, pw4, pw5, pw6, pw7, pw8]
+
+for chesspiece in chesspieces:
+    if chesspiece.get_color() == "black":
+        pos = chesspiece.get_pos()
+        piece = chesspiece.get_piece()
+        if piece == "rook":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=rb)
+        elif piece == "night":
+            canvas.create_image(pos[1] * 60 + 30, pos[0] * 60 + 30, image=nb)
+        elif piece == "bishop":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=bb)
+        elif piece == "queen":
+            canvas.create_image(pos[1] * 60 + 30, pos[0] * 60 + 30, image=qb)
+        elif piece == "king":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=kb)
+        elif piece == "pawn":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=pb)
+    elif chesspiece.get_color() == "white":
+        pos = chesspiece.get_pos()
+        piece = chesspiece.get_piece()
+        if piece == "rook":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=rw)
+        elif piece == "night":
+            canvas.create_image(pos[1] * 60 + 30, pos[0] * 60 + 30, image=nw)
+        elif piece == "bishop":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=bw)
+        elif piece == "queen":
+            canvas.create_image(pos[1] * 60 + 30, pos[0] * 60 + 30, image=qw)
+        elif piece == "king":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=kw)
+        elif piece == "pawn":
+            canvas.create_image(pos[1]*60+30, pos[0]*60+30, image=pw)
 
 
 canvas.grid(column=2, row=0, pady=20, padx=20)
 root.mainloop()
-
