@@ -23,4 +23,5 @@ class ChessPiece:
     def move(self, pos):
         self.pos = pos
 
-    # def getAvailableMoves
+    def raw_moves(self):
+        pass
