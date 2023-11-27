@@ -3,8 +3,8 @@
 ![image](chess_logo.jpg)
 ## Description/Motivation
 
-Create a web application that will collect previously played games and analyse these games to find weak points in the users 
-game. Then presents the positions that the user has played weakly previously and give them the opportunity to play a stronger move. 
+Create a python program that will collect previously played games and analyze these games to find weak points in the users 
+game. Then presents the positions that the user has played weakly before and give them the opportunity to play a stronger move. 
 
 ### Concept
 [Concept.md](concept.md)
@@ -20,15 +20,15 @@ the primary tool to get better at chess.
 
 ### Prerequisites
 
-Nothing will be required to downlowad, it will be a web application. 
+You will need to have python, a python IDE and my python project downloaded. 
 
 ### Requirements
 [Requirements](requirments.md)
 
 ## Built With
 
-- [afreamework1](http://www.aframework1.io/): A framework that is likly to be used goes here.
-- [afreamework2](http://www.aframework2.io/): A second framework that is likly to be used goes here.
+- [Stockfish](https://pypi.org/project/stockfish/): Chess Analysis Software
+- [python-chess](https://python-chess.readthedocs.io/en/latest/): A python library that handles all chess funsctions including illegal moves, castling, checks and checkmate. 
 - PyCharm 
 
 ## Design
@@ -44,9 +44,10 @@ Nothing will be required to downlowad, it will be a web application.
 
 ## Acknowledgments
 
-- If you find code that you are going to use in YourProjectName, include author's name and URL here.
-- all who inspired the idea and/or the code in YourProjectName
-- other people you wish to acknowledge
+- Professor Deanna Wilborne
+- My Computer Design Practicum class
+
+## [Installation and Use Guide](Installation.md)
 
 ## License (not required initially)
 
