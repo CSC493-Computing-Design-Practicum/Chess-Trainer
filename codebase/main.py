@@ -41,6 +41,8 @@ def import_games(month, year, username):
         for move in moves:
             if "." in move:
                 trash.append(move)
+            # this part fixes the illegal move problem before took out all castling since
+            # I removed all moves with "-" i.e. O-O is a valid move.
             elif move == "0-1" or move == "1-0":
                 trash.append(move)
 
