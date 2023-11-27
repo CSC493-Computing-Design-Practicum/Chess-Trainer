@@ -1,6 +1,6 @@
 # Chess Trainer
 ## Logo
-![image](chess_logo.jpg)
+![image](codebase/chess_logo.png)
 ## Description/Motivation
 
 Create a python program that will collect previously played games and analyze these games to find weak points in the users 
