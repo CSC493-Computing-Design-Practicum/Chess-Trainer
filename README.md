@@ -6,8 +6,7 @@
 Create a python program that will collect previously played games and analyze these games to find weak points in the users 
 game. Then presents the positions that the user has played weakly before and give them the opportunity to play a stronger move. 
 
-### Concept
-[Concept.md](concept.md)
+### [Concept](concept.md)
 
 ### Scope
 
@@ -22,8 +21,7 @@ the primary tool to get better at chess.
 
 You will need to have python, a python IDE and my python project downloaded. 
 
-### Requirements
-[Requirements](requirments.md)
+### [Requirements](requirments.md)
 
 ## Built With
 
@@ -31,11 +29,9 @@ You will need to have python, a python IDE and my python project downloaded.
 - [python-chess](https://python-chess.readthedocs.io/en/latest/): A python library that handles all chess funsctions including illegal moves, castling, checks and checkmate. 
 - PyCharm 
 
-## Design
-[Design.md](design.md)
+## [Design](design.md)
 
-## Testing Plan
-[Test Plan](test.plan.md)
+## [Testing Plan](test.plan.md)
 
 ## Author
 
