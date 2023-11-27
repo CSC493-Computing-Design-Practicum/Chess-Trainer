@@ -18,9 +18,9 @@ def cleanfile(filename):
     return clean
 
 
-def import_games(month, year):
+def import_games(month, year, username):
     # This gets the users data from the Chess.com server
-    txt = urlopen(f"https://api.chess.com/pub/player/jakeBeans/games/{year}/{month}/pgn")
+    txt = urlopen(f"https://api.chess.com/pub/player/{username}/games/{year}/{month}/pgn")
     data = txt.read()
     file = open("Games.pgn", "w")
     file.writelines(data.decode("utf-8"))
@@ -59,6 +59,7 @@ def analyse(games):
 
     for i in range(len(games)):
         board.set_fen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
+        stockfish.set_fen_position("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
         for r in range(len(games[i])):
             previousval = stockfish.get_evaluation()["value"]
             board.push_san(games[i][r])
@@ -76,15 +77,20 @@ def analyse(games):
 
     return weak_moves
 
+print("What month do you want to import games from?(Use Two-Digit Number ex. 09)")
+month = input()
+print("What year would you like to import games from? ex. 2023")
+year = input()
+print("What is your chess.com username?")
+username = input()
+cleanedgames = import_games(month, year, username)
+weak_moves = analyse(cleanedgames)
 
-# cleanedgames = import_games(11, 2023)
-# weak_moves = analyse(cleanedgames)
+cleanedgames = [['e4', 'd5', 'e5', 'e6', 'd4', 'Nc6', 'c3', 'Nge7', 'Bd3', 'g6', 'Nf3', 'Bg7', 'Bg5', 'h6', 'Bf6', 'Bxf6', 'exf6', 'Nf5', 'Bxf5', 'exf5', 'Qe2+', 'Be6', 'Na3', 'Qxf6', 'Nb5', 'O-O-O', 'Ne5', 'h5', 'Nxc6', 'bxc6', 'Nxa7+', 'Kb7', 'Nxc6', 'Kxc6', 'a4', 'Bd7', 'Qb5+', 'Kd6', 'Qc5+', 'Ke6', 'Kf1', 'Rc8', 'Re1+', 'Qe5', 'Rxe5+', 'Kf6', 'Qxd5', 'Bxa4', 'g3', 'Rb8', 'Kg2', 'Rb5', 'Qc6+', 'Kg5', 'Rxb5', 'Rb8', 'c4', 'Bxb5', 'cxb5', 'Rc8', 'h4+', 'Kg4', 'd5', 'g5', 'hxg5', 'Kxg5', 'd6', 'Rd8', 'Qxc7', 'Re8', 'd7'], ['Nf3', 'd5'], ['e4', 'c6', 'd4', 'd5', 'Nc3', 'Nf6', 'e5', 'Nfd7', 'Nf3', 'e6', 'Bg5', 'Be7', 'h4', 'c5', 'Bb5', 'O-O', 'a3', 'cxd4', 'Nxd4', 'Nc5', 'b4', 'Ne4', 'Nxe4', 'dxe4', 'f3', 'e3', 'g3', 'Bxg5', 'hxg5', 'Qxg5', 'Qd3', 'Qxg3+', 'Ke2', 'Qf2+', 'Kd1', 'Bd7', 'Qxh7#']]
+weak_moves = [(0, 14, -189), (0, 30, -136), (0, 35, 280), (0, 40, -427), (0, 41, 674), (0, 46, -162), (0, 51, 109), (0, 55, 2676), (0, 56, -2727), (0, 59, 1550), (0, 60, -461), (2, 14, -132), (2, 19, 159), (2, 24, -157), (2, 25, 151), (2, 26, -131), (2, 32, -215), (2, 35, 297)]
 
-cleanedgames = [['e4', 'e5', 'Nf3', 'd6', 'Bc4', 'Be6', 'Bxe6', 'fxe6', 'd4', 'exd4', 'Nxd4', 'Qf6', 'Nc3', 'Nc6', 'Nxc6', 'bxc6', 'O-O', 'd5', 'Qe1', 'Bd6', 'exd5', 'cxd5', 'Nxd5', 'Kd7', 'Nxf6+', 'Nxf6', 'Bg5'], ['e4', 'd5', 'exd5', 'Qxd5', 'Nc3', 'Qa5', 'Bc4', 'e5', 'Qf3', 'Be6', 'Bxe6', 'fxe6', 'Qxb7', 'Qb6', 'Qxa8', 'Be7', 'Qe4', 'Nf6', 'Qxe5', 'Nc6', 'Qg3', 'Nd4', 'Kd1', 'g6', 'Nf3', 'Nh5', 'Qe5', 'Nxf3', 'Qxh8+', 'Kf7', 'Qxh7+', 'Kf6', 'Qh8+', 'Kg5', 'gxf3', 'Qxf2', 'Qe5+', 'Kh6', 'd4+', 'Kh7', 'Bg5', 'Bb4', 'Ne4', 'Qg2', 'Re1', 'Bxe1', 'Kxe1', 'Qxc2', 'Qxe6', 'Qxb2', 'Qf7+', 'Ng7', 'Rc1', 'Qb4+', 'Kf2', 'Qb2+', 'Kg3', 'Qxd4', 'Nf6+', 'Kh8', 'Qg8#']]
-weak_moves = [(0, 23, 545), (1, 0, -665), (1, 8, -112), (1, 9, 478), (1, 20, -173), (1, 22, -118), (1, 23, 114), (1, 27, 207), (1, 29, 153), (1, 31, 310), (1, 32, -343), (1, 33, 309), (1, 35, 287), (1, 36, -3337), (1, 37, 425), (1, 38, -3211), (1, 40, -205), (1, 41, 241), (1, 42, -1082), (1, 43, 977), (1, 44, -179), (1, 45, 3489), (1, 46, -3211)]
-
-
-print(weak_moves)
+# print(weak_moves)
+# print(cleanedgames)
 
 answer = "y"
 while(answer == "y"):
@@ -99,16 +105,18 @@ while(answer == "y"):
     for i in range(0, quiz[1]):
         board.push_san(cleanedgames[quiz[0]][i])
 
-    pre_val = stockfish.get_evaluation()["value"]
     stockfish.set_fen_position(board.fen())
+    pre_val = stockfish.get_evaluation()["value"]
     bestmove = stockfish.get_best_move()
     print(stockfish.get_board_visual())
+    print(stockfish.get_best_move())
 
     new_move = input()
 
     try:
         board.push_san(new_move)
         new_val = stockfish.get_evaluation()["value"]
+        print(quiz[2], pre_val, new_val)
         new_score = new_val - pre_val
 
         if new_score > quiz[2]:
