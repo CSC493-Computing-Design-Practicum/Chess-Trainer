@@ -1,5 +1,10 @@
 ### Installation (NOT READY TO BE SUBMITTED!!)
 
-Since, this is made using python make sure you have python downloaded and any IDE that will be able to run python. 
-Then simply clone this github repository and open up the main.py and run. 
-Then you are good to go!
+## Guide
+
+- Start by locating the github which you have done since you are reading this.
+- Now, you need to clone this repository into your local machine. This can be done many ways, through your console or directly through an IDE (depends on the IDE obviously). [Here is a link if you need help cloning a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- Once you have the repository cloned all you need to do is open main.py and simply run the program. (NOTE: this program uses the console for input so make sure that you are looking in the console for prompts)
+- And lastly, enjoy the program. I hope you find it useful.
+
+## Use Cases
