@@ -8,3 +8,5 @@
 - And lastly, enjoy the program. I hope you find it useful.
 
 ## Use Cases
+
+This program only really has one use case. You are someone who has played chess and is looking to get better at it and you are using this program to try and help improve your game. 
