@@ -4,6 +4,10 @@ from ChessPiece import ChessPiece
 
 
 def about():
+    """
+    This is just the function that will be used for the about button
+    :return: NONE
+    """
     print("You should see some cool info now! Do you?")
 
 
@@ -14,17 +18,28 @@ def get_event(event):
 
 
 def calculate_pos(event):
+    """
+    This just goes from pixel position to chess position.
+    :param event: The click we are finding the position of
+    :return: the position
+    """
     x = event.x // 60
     y = event.y // 60
     return x, y
 
 
 def find_piece(x, y):
+    """
+    Tells us if there is a piece in the position (x, y) or not.
+    :param x: the x coordinate of the position
+    :param y: the y coordinate of the position
+    :return: the piece if one is found
+    """
     for i in chesspieces:
         if i.get_pos() == (x, y):
             return i
 
-
+# This is the board, it has -1 on the sides to represent out of bounds, this idea comes from professor Deanna Wilborne
 board = [[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
          [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
          [-1, -1, "rb", "nb", "bb", "qb", "kb", "bb", "nb", "rb", -1, -1],
