@@ -1,4 +1,4 @@
-### Installation (NOT READY TO BE SUBMITTED!!)
+### Installation
 
 ## Guide
 
