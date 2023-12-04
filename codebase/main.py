@@ -9,6 +9,11 @@ stockfish.set_skill_level(20)
 
 
 def cleanfile(filename):
+    """
+    This method reads in all the data from the file and then gets rid of all lines that are not chess moves.
+    :param filename: this is the file that will be "cleaned"
+    :return: this is a list of elements from the file that have not been removed from cleaning
+    """
     file = open(filename, "r+")
     txt = file.readlines()
     clean = []
@@ -19,6 +24,14 @@ def cleanfile(filename):
 
 
 def import_games(month, year, username):
+    """
+    This method imports a file from chess.com containing all the games of a specific user from a one month span,
+    and cleans the data into just the moves played in each chess game.
+    :param month: the month you want to import from
+    :param year: the year you want to import from
+    :param username: the users chess.com username
+    :return: a list of lists of the moves from the chess games
+    """
     # This gets the users data from the Chess.com server
     txt = urlopen(f"https://api.chess.com/pub/player/{username}/games/{year}/{month}/pgn")
     data = txt.read()
@@ -56,6 +69,11 @@ def import_games(month, year, username):
 
 
 def analyse(games):
+    """
+    This takes in a list of games and finds weak moves that the user could improve on.
+    :param games: the games to analyse
+    :return: a list of weak moves that should be quized to the user
+    """
     board = chess.Board()
     weak_moves = []
 
@@ -87,6 +105,8 @@ print(weak_moves)
 print(cleanedgames)
 
 answer = "y"
+
+# This is the main loop for the program, it quizzes the user, and gives feedback on the move they make.
 while(answer == "y"):
     quiz = random.choice(weak_moves)
     print(quiz)
@@ -104,8 +124,6 @@ while(answer == "y"):
     bestmove = stockfish.get_best_move()
     print(stockfish.get_board_visual())
     print(stockfish.get_best_move())
-
-
 
     done = False
     while (not done):
