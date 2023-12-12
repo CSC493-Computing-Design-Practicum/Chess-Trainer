@@ -107,7 +107,7 @@ answer = "y"
 # This is the main loop for the program, it quizzes the user, and gives feedback on the move they make.
 while(answer == "y"):
     quiz = random.choice(weak_moves)
-    print(quiz)
+    # print(quiz)
     if quiz[1] % 2 == 0:
         print("White played " + cleanedgames[quiz[0]][quiz[1]] + " find a better move.")
     else:
@@ -138,7 +138,7 @@ while(answer == "y"):
             else:
                 print("This was not a better move.")
 
-            print("The best move was " + bestmove)
+            # print("The best move was " + bestmove)
             done = True
         except:
             print("Not a valid move. Try Again.")
